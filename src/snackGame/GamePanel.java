@@ -55,13 +55,13 @@ public class GamePanel extends JPanel implements ActionListener {               
                     g.setColor(Color.green);
                     g.fillRect(x[i], y[i], UNIT_SIZE, UNIT_SIZE);
                 } else {
-                    g.setColor(new Color(45, 180, 0));                    //mengatur warna body snake dengan 2 warna
+                    g.setColor(new Color(45, 180, 0));                      //mengatur warna body snake dengan 2 warna
                    //g.setColor(new Color(random.nextInt(255), random.nextInt(255), random.nextInt(255))); //mengatur warna body snake dengan banyak warna
                     g.fillRect(x[i], y[i], UNIT_SIZE, UNIT_SIZE);                     //memberi bentuk pada makanan ular yaitu oval
                 }
             }
             g.setColor(Color.WHITE);                                                  //mengatur warna putih pada bacaan skor
-            g.setFont(new Font("Arial", Font.BOLD, 40));                  //mengatur font, jenis font, dan ukuran font pada teks Skor
+            g.setFont(new Font("Arial", Font.BOLD, 40));                    //mengatur font, jenis font, dan ukuran font pada teks Skor
             FontMetrics metrics = getFontMetrics(g.getFont());                        //pada class FontMetrics ini menggunakan enkapsulasi untuk mendeklarasikan "metrics" untuk mendapatkan font yang diberikan ke method Graphics
             g.drawString("Score: "+applesEaten, (SCREEN_WIDTH - metrics.stringWidth("Score: "+applesEaten))/2, g.getFont().getSize()); //memberikan perintah kepada skor untuk menghitung makanan yang di makan ular
         } else {
@@ -135,13 +135,13 @@ public class GamePanel extends JPanel implements ActionListener {               
     public void gameOver(Graphics g) {
         //Score
         g.setColor(Color.red);                                                       //mengatur warna merah untuk text score
-        g.setFont( new Font("Ink Free",Font.BOLD, 40));                  //mengatur font, jenis font dan ukuran font text score
+        g.setFont( new Font("Ink Free",Font.BOLD, 40));                 //mengatur font, jenis font dan ukuran font text score
         FontMetrics metrics1 = getFontMetrics(g.getFont());                          //pada class FontMetrics ini menggunakan enkapsulasi untuk mendeklarasikan "metrics" untuk mendapatkan font yang diberikan ke method Graphics
         g.drawString("Score: "+applesEaten, (SCREEN_WIDTH - metrics1.stringWidth("Score: "+applesEaten))/2, g.getFont().getSize());
 
         //Game Over text
         g.setColor(Color.red);                                                       //mengatur warna merah untuk text game over
-        g.setFont( new Font("Ink Free",Font.BOLD, 75));                  //mengatur font, jenis font dan ukuran font text game over
+        g.setFont( new Font("Ink Free",Font.BOLD, 75));                 //mengatur font, jenis font dan ukuran font text "Game Over"
         FontMetrics metrics2 = getFontMetrics(g.getFont());                          //pada class FontMetrics ini menggunakan enkapsulasi untuk mendeklarasikan "metrics" untuk mendapatkan font yang diberikan ke method Graphics
         g.drawString("Game Over", (SCREEN_WIDTH - metrics2.stringWidth("Game Over"))/2, SCREEN_HEIGHT/2); //menampilkan text game over
     }
