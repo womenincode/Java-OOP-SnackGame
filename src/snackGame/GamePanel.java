@@ -6,9 +6,9 @@ import java.awt.event.*;
 import java.util.Random;
 
 public class GamePanel extends JPanel implements ActionListener {
-    static final int SCREEN_WIDTH = 1300;
-    static final int SCREEN_HEIGHT = 750;
-    static final int UNIT_SIZE = 50;
+    static final int SCREEN_WIDTH = 600;
+    static final int SCREEN_HEIGHT = 600;
+    static final int UNIT_SIZE = 25;
     static final int GAME_UNITS = (SCREEN_WIDTH*SCREEN_HEIGHT)/(UNIT_SIZE*UNIT_SIZE);
     static final int DELAY = 175;
     final int x[] = new int[GAME_UNITS];
@@ -25,7 +25,7 @@ public class GamePanel extends JPanel implements ActionListener {
     GamePanel () {
         random = new Random();
         this.setPreferredSize(new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT));
-        this.setBackground(Color.WHITE);
+        this.setBackground(Color.BLACK);
         this.setFocusable(true);
         this.addKeyListener(new MyKeyAdapter());
         startGame();
@@ -38,7 +38,7 @@ public class GamePanel extends JPanel implements ActionListener {
         timer.start();
     }
 
-    public void paintComponenet(Graphics g) {
+    public void paintComponent(Graphics g) {
         super.paintComponent(g); //kata kunci super
         draw(g);
     }
@@ -46,10 +46,6 @@ public class GamePanel extends JPanel implements ActionListener {
     public void draw(Graphics g) {
 
         if (running) {
-            for (int i = 0; i < SCREEN_HEIGHT / UNIT_SIZE; i++) {
-                g.drawLine(i * UNIT_SIZE, 0, i * UNIT_SIZE, SCREEN_HEIGHT);
-                g.drawLine(0, i * UNIT_SIZE, SCREEN_WIDTH, SCREEN_HEIGHT);
-            }
             g.setColor(Color.red);
             g.fillOval(appleX, appleY, UNIT_SIZE, UNIT_SIZE);
 
@@ -59,11 +55,11 @@ public class GamePanel extends JPanel implements ActionListener {
                     g.fillRect(x[i], y[i], UNIT_SIZE, UNIT_SIZE);
                 } else {
                     g.setColor(new Color(45, 180, 0));
-                   // g.setColor(new Color(random.nextInt(255), random.nextInt(255), random.nextInt(255)));
+                    g.setColor(new Color(random.nextInt(255), random.nextInt(255), random.nextInt(255)));
                     g.fillRect(x[i], y[i], UNIT_SIZE, UNIT_SIZE);
                 }
             }
-            g.setColor(Color.red);
+            g.setColor(Color.WHITE);
             g.setFont(new Font("Ink Free", Font.BOLD, 40));
             FontMetrics metrics = getFontMetrics(g.getFont());
             g.drawString("Score: "+applesEaten, (SCREEN_WIDTH - metrics.stringWidth("Score: "+applesEaten))/2, g.getFont().getSize());
