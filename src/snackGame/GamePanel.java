@@ -151,7 +151,7 @@ public class GamePanel extends JPanel implements ActionListener {               
         if (running) {                                                               //jika ular dapat berjalan, maka
             move();                                                                  //memanggil method move
             checkApple();                                                            //memanggil method checkApple
-            checkCollisions();                                                       //memanggil method checkCollisions untuk menggerakkan kepala ular
+            checkCollisions();                                                       //memanggil method 'checkCollisions' untuk menggerakkan kepala ular
         }
         repaint();
     }
