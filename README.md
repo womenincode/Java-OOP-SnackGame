@@ -54,38 +54,237 @@ Adapun manfaat dan tujuan dari pembuatan "SnackGame" ini yaitu :
 
 Berikut ini adalah materi-materi PBO yang diimplementasikan pada pembuatan program `SnackGame` yaitu:
 
-#### Modul 3 : Pengenalan Pemrograman Berorientasi Objek (PBO)
+#### 📘 Modul 3 : Pengenalan Pemrograman Berorientasi Objek (PBO)
 
-1. Class
-2. Atribut
-3. Method
-4. Object
+1. Class ☑️
 
-#### Modul 4 : Dasar Pemrograman Berorientasi Objek (PBO)
+`Class` bertugas untuk mengumpulkan prosedur/fungsi dan variabel dalam satu tempat. `Class` merupakan blueprint dari sebuah objek atau cetakan untuk membuat objek. Berikut penerapan   Class pada `SnackGame` yaitu:
 
-1. Encapsulation (Enkapsulasi)
-2. Constructor
+> Class "MainGame" [(Link here)](https://github.com/womenincode/Java-OOP-SnackGame/blob/main/src/snackGame/MainGame.java)
 
-#### Modul 5 : Mengelola Class
+```java
+package snackGame;
 
-1. Kata kunci "This"
+public class MainGame {
+...
+}
+```
 
-#### Modul 6 : Konsep Inheritance
+> Class "GameFram" [(Link here)](https://github.com/womenincode/Java-OOP-SnackGame/blob/main/src/snackGame/MainGame.java)
 
-1. Inheritance
-2. Kata kunci "Super"
+```java
+package snackGame;
+public class GameFrame extends JFrame {
+...
+}
 
-#### Modul 7 : Overloading dan Overriding
+```
 
-1. Overriding
+> Class "GamePanel" [(Link here)](https://github.com/womenincode/Java-OOP-SnackGame/blob/main/src/snackGame/GamePanel.java)
 
-#### Modul 8 : Polimorfisme
+```java
+package snackGame;
 
-1. Polimorfisme
+public class GamePanel extends JPanel implements ActionListener {    
+...
+}
+```
 
-#### Modul 9 : Exception
+</br>
 
-1. Blcok try-catch
+2. Atribut ☑️
+
+`Atribut` merupakan bagian dari sebuah kelas yang masih berhubungan erat dari kelas tersebut. Atribut bisa juga disebut sebagai properti atau properties dari sebuah class. Penerapan Atribut pada `SnackGame` yaitu:
+
+> Class "GamePanel" [(Link here)](https://github.com/womenincode/Java-OOP-SnackGame/blob/main/src/snackGame/GamePanel.java)
+
+```java
+public class GamePanel extends JPanel implements ActionListener {                  
+    static final int SCREEN_WIDTH = 600;                                              
+    static final int SCREEN_HEIGHT = 600;                                        
+    static final int UNIT_SIZE = 25;                                              
+    static final int GAME_UNITS = (SCREEN_WIDTH*SCREEN_HEIGHT)/(UNIT_SIZE*UNIT_SIZE); 
+    static final int DELAY = 175;                                                      
+    final int x[] = new int[GAME_UNITS];                                                
+    final int y[] = new int[GAME_UNITS];                                                
+    private int bodyParts = 6;                                                          
+    private int applesEaten;                                                            
+    private int appleX;                                                                 
+    private int appleY;                                                               
+    private boolean running = false;                                                    
+    private char direction = 'R';    
+    
+    ....
+}
+```
+
+</br>
+
+3. Method ☑️
+
+`Method` berperan menjelaskan bagaimana suatu atribut beraksi. Peran yang dimaksud berupa tingkah laku (behavior) yang dapat digambarkan oleh suatu method. Penerapan Method-method pada Program `SnackGame` yaitu:
+
+> Class "MainGame" [(Link here)](https://github.com/womenincode/Java-OOP-SnackGame/blob/main/src/snackGame/MainGame.java)
+
+```java
+package snackGame;
+
+public class MainGame {
+    //method main
+    public static void main(String[] args) {
+        ...
+    }
+}
+
+```
+
+> Class "GamePanel" [(Link here)](https://github.com/womenincode/Java-OOP-SnackGame/blob/main/src/snackGame/GamePanel.java)
+
+```java
+package snackGame;
+
+public class GamePanel extends JPanel implements ActionListener {                      
+
+    public GamePanel () {
+      ...
+    }
+
+    public void startGame() {
+       ...
+    }
+
+    public void paintComponent(Graphics g) {
+        ...
+    }
+
+    public void draw(Graphics g) {
+       ...
+    }
+
+    public void newApple() {
+        ...
+    }
+
+    public void move() {
+        ...
+    }
+
+    public void checkApple() {                                                      
+        ...
+    }
+
+    public void checkCollisions() {                                               
+       ...
+    }
+
+    public void gameOver(Graphics g) {
+        ...
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {                                
+        ...
+    }
+
+    //inner class (inheritance)
+    public class MyKeyAdapter extends KeyAdapter{
+        ...
+    }
+}
+
+```
+</br>
+
+4. Object ☑️
+
+Objek (Object) adalah sebuah variabel instance yang merupakan wujud dari class. Instance merupakan wujud dari sebuah kelas. Sebuah objek digambarkan dengan variable dan method.
+Penerapan Object pada program `SnackGame` yaitu:
+
+> Class "GameFram" [(Link here)](https://github.com/womenincode/Java-OOP-SnackGame/blob/main/src/snackGame/MainGame.java)
+
+```java
+package snackGame;
+
+import javax.swing.JFrame;
+
+public class GameFrame extends JFrame {
+
+    GameFrame(){
+        //mendeklarasikan object class GamePanel
+        this.add(new GamePanel());
+    }
+}
+```
+
+</br>
+
+####  📘 Modul 4 : Dasar Pemrograman Berorientasi Objek (PBO)
+
+1. Information Hiding ☑️
+
+Information Hiding adalah menyembunyikan attribute suatu objek dari objek lain. Informasi dari 'class' disembunyikan dari anggota-anggota lainnya agar 'class' lain tidak dapat mengaksesnya. Implementasi pada program `SnackGame` yaitu:
+
+> Class "GamePanel" [(Link here)](https://github.com/womenincode/Java-OOP-SnackGame/blob/main/src/snackGame/GamePanel.java)
+
+```java
+    private int bodyParts = 6;                      
+    private int applesEaten;                        
+    private int appleX;
+    private int appleY;                     
+    private boolean running = false;                
+    private char direction = 'R';                 
+```
+
+2. Encapsulation (Enkapsulasi) ☑️
+
+Encapsulation (Enkapsulasi) adalah suatu cara untuk menyembunyikan implementasi detail dari suatu class. Enkapsulasi mempunyai dua hal mendasar, yaitu:
+
+```java
+public void draw(Graphics g) {
+   ...
+   //pada class FontMetrics ini menggunakan enkapsulasi untuk mendeklarasikan "metrics" untuk mendapatkan font yang diberikan ke method Graphics
+   FontMetrics metrics = getFontMetrics(g.getFont());
+   ...
+    }
+    
+public void gameOver(Graphics g) {
+        //Score
+        ...
+        //pada class FontMetrics ini menggunakan enkapsulasi untuk mendeklarasikan "metrics" untuk mendapatkan font yang diberikan ke method Graphics
+        FontMetrics metrics1 = getFontMetrics(g.getFont());                          
+        g.drawString("Score: "+applesEaten, (SCREEN_WIDTH - metrics1.stringWidth("Score: "+applesEaten))/2, g.getFont().getSize());
+        ...
+        
+        //Game Over text
+        ...
+        //pada class FontMetrics ini menggunakan enkapsulasi untuk mendeklarasikan "metrics" untuk mendapatkan font yang diberikan ke method Graphics
+        FontMetrics metrics2 = getFontMetrics(g.getFont());                          
+        ...
+    }
+```
+
+3. Constructor ☑️
+
+#### 📘 Modul 5 : Mengelola Class
+
+1. Kata kunci "This" ☑️
+
+#### 📘 Modul 6 : Konsep Inheritance
+
+1. Inheritance ☑️
+2. Kata kunci "Super" ☑️
+
+#### 📘 Modul 7 : Overloading dan Overriding
+
+1. Overriding ☑️
+
+#### 📘 Modul 8 : Polimorfisme
+
+1. Polimorfisme ☑️
+
+#### 📘 Modul 9 : Exception
+
+1. Blcok try-catch ☑️
 
 
 + **Tools yang Digunakan**
