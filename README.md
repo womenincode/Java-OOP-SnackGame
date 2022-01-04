@@ -70,7 +70,7 @@ public class MainGame {
 }
 ```
 
-> Class "GameFram" [(Link here)](https://github.com/womenincode/Java-OOP-SnackGame/blob/main/src/snackGame/MainGame.java)
+> Class "GameFrame" [(Link here)](https://github.com/womenincode/Java-OOP-SnackGame/blob/main/src/snackGame/GameFrame.java)
 
 ```java
 package snackGame;
@@ -200,7 +200,7 @@ public class GamePanel extends JPanel implements ActionListener {
 Objek (Object) adalah sebuah variabel instance yang merupakan wujud dari class. Instance merupakan wujud dari sebuah kelas. Sebuah objek digambarkan dengan variable dan method.
 Penerapan Object pada program `SnackGame` yaitu:
 
-> Class "GameFram" [(Link here)](https://github.com/womenincode/Java-OOP-SnackGame/blob/main/src/snackGame/MainGame.java)
+> Class "GameFrame" [(Link here)](https://github.com/womenincode/Java-OOP-SnackGame/blob/main/src/snackGame/GameFrame.java)
 
 ```java
 package snackGame;
@@ -239,6 +239,8 @@ Information Hiding adalah menyembunyikan attribute suatu objek dari objek lain. 
 
 Encapsulation (Enkapsulasi) adalah suatu cara untuk menyembunyikan implementasi detail dari suatu class. Enkapsulasi mempunyai dua hal mendasar, yaitu:
 
+> Class "GamePanel" [(Link here)](https://github.com/womenincode/Java-OOP-SnackGame/blob/main/src/snackGame/GamePanel.java)
+
 ```java
 public void draw(Graphics g) {
    ...
@@ -263,24 +265,242 @@ public void gameOver(Graphics g) {
     }
 ```
 
+</br>
+
 3. Constructor ☑️
+
+`Constructor` adalah suatu method yang pertama kali dijalankan pada saat pembuatan suatu obyek. Konstruktor ini merupakan method yang berfungsi untuk menginisialisasi variabel-variabel instans yang akan di miliki oleh objek. Konstruktor dipanggil pada saat proses instansiasi kelas menjadi objek. Berikut penerapan `constructor` pada program `SnackGame` yaitu:
+
+> Class "GameFrame" [(Link here)](https://github.com/womenincode/Java-OOP-SnackGame/blob/main/src/snackGame/GameFrame.java)
+
+```java
+package snackGame;
+
+public class GameFrame extends JFrame {  //Class
+
+    GameFrame(){  // ini adalah constructor
+        ...  // isi dari constructor
+    }
+       // isi dari class
+}
+```
+
+> Class "GamePanel" [(Link here)](https://github.com/womenincode/Java-OOP-SnackGame/blob/main/src/snackGame/GamePanel.java)
+
+```java
+package snackGame;
+
+public class GamePanel extends JPanel implements ActionListener {  //Class                    
+
+    public GamePanel () {   //ini adalah constructor
+      ...  // isi constructor
+    }
+      // isi dari class
+ }
+ ```
+ 
+ </br>
 
 #### 📘 Modul 5 : Mengelola Class
 
 1. Kata kunci "This" ☑️
 
+Kata kunci ini digunakan dalam sebuah kelas untuk menyatakan object sekarang. Kata kunci `this` sangat berguna untuk menunjukkan suatu member dalam class-nya sendiri. `This` dapat digunakan baik untuk data member maupun untuk function member, serta dapat juga digunakan untuk konstruktor. Berikut penerapan pada program `SnackGame` yaitu:
+
+> Class "GameFrame" [(Link here)](https://github.com/womenincode/Java-OOP-SnackGame/blob/main/src/snackGame/GameFrame.java)
+
+```java
+package snackGame;
+
+public class GameFrame extends JFrame {
+
+    GameFrame(){
+        this.add(new GamePanel());                              
+        this.setTitle("Snack Game - Created by : Kelompok 3");  
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_ CLOSE);    
+        this.setResizable(false);                               
+        this.pack();                                            
+        this.setVisible(true);                                  
+        this.setLocationRelativeTo(null);                       
+    }
+    
+}
+```
+
+> Class "GamePanel" [(Link here)](https://github.com/womenincode/Java-OOP-SnackGame/blob/main/src/snackGame/GamePanel.java)
+
+```java
+package snackGame;
+
+public class GamePanel extends JPanel implements ActionListener {                  
+
+    public GamePanel () {   
+      this.setPreferredSize(new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT));              
+        this.setBackground(Color.DARK_GRAY);                                            
+        this.setFocusable(true);                                                        
+        this.addKeyListener(new MyKeyAdapter());
+    }
+    
+ }
+ ```
+</br>
+
 #### 📘 Modul 6 : Konsep Inheritance
 
 1. Inheritance ☑️
+
+Inheritance merupakan salah satu dari 4 konsep Pemrograman Java yang fundamental Java. Inheritance bersifat krusial karena memiliki efek langsung pada bagaimana mendesain class-class. Konsep ini sebenarnya memiliki tujuan yaitu ketika membuat suatu class maka hanya perlu menspesifikasikan apa yang menjadi perbedaan antara suatu class dengan class lainnya, kemudian secara otomatis Inheritance ini akan memberikan akses otomatis terhadap informasi yang terkandung dari class lainnya. Keyword untuk Inheritance atau pewarisan adalah "Extends". Berikut penerapan pada program `SnackGame` yaitu:
+
+> Class "GamePanel" [(Link here)](https://github.com/womenincode/Java-OOP-SnackGame/blob/main/src/snackGame/GamePanel.java)
+
+```java
+package snackGame;
+
+//Inheritance
+public class GamePanel extends JPanel implements ActionListener {                  
+      ...
+       //inner class (inheritance)
+    public class MyKeyAdapter extends KeyAdapter{
+        @Override                                                        
+        public void keyPressed(KeyEvent e) {
+           
+             
+        }
+    }
+ }
+ ```
+ </br>
+ 
 2. Kata kunci "Super" ☑️
+
+Kata kunci "Super" dipakai untuk merujuk pada member dari Parent Class, bagaimana kata kunci this yang dipakai untuk merujuk pada anggota dari class itu sendiri.  Berikut penerapan pada program `SnackGame` yaitu:
+
+> Class "GamePanel" [(Link here)](https://github.com/womenincode/Java-OOP-SnackGame/blob/main/src/snackGame/GamePanel.java)
+
+```java
+package snackGame;
+
+//Inheritance
+public class GamePanel extends JPanel implements ActionListener {                  
+      ...
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g); //kata kunci super                                    
+        draw(g);                                                           
+    }
+}
+```
+
+</br>
 
 #### 📘 Modul 7 : Overloading dan Overriding
 
 1. Overriding ☑️
 
+Overriding merupakan suatu keadaan dimana kelas anak dapat mengubah atau bisa kita bilang memodifikasi atau memperluas data dan method pada kelas induk. Keuntungan Overriding : dapat menambahkan sifat / atribut pada kelas induk nya. Berikut penerapan pada program `SnackGame` yaitu:
+
+> Class "GamePanel" [(Link here)](https://github.com/womenincode/Java-OOP-SnackGame/blob/main/src/snackGame/GamePanel.java)
+
+`Parent Class : `
+
+> Class `KeyAdapter.java`
+
+```java
+public abstract class KeyAdapter implements KeyListener {
+    
+    public void keyPressed(KeyEvent e) {
+    ...
+    }
+    
+}
+```
+
+`Parent Class : `
+
+> Class Interface `ActionListener.java`
+
+```java
+public interface ActionListener extends EventListener {
+
+    public void actionPerformed(ActionEvent e);
+
+}
+```
+
+`SubClass :`
+
+```java
+ //inner class (inheritance)
+    public class MyKeyAdapter extends KeyAdapter{
+        //Overriding method KeyPressed
+        @Override                                                                   
+        public void keyPressed(KeyEvent e) {
+        ...
+        }    
+    }
+     
+    //Overriding pada method actionPerformed yaitu untuk memulai berjalannya game
+    @Override
+    public void actionPerformed(ActionEvent e) {                                   
+       ...
+    }
+```
+
+</br>
+
 #### 📘 Modul 8 : Polimorfisme
 
 1. Polimorfisme ☑️
+
+`Polymorphism` (polimorfisme) adalah kemampuan untuk mempunyai beberapa bentuk class yang berbeda. Polimorfisme ini terjadi pada saat suatu obyek bertipe parent class, akan tetapi pemanggilan constructornya melalui `subclass`. Berikut penerapan pada program `SnackGame` yaitu:
+
+> Class "GamePanel" [(Link here)](https://github.com/womenincode/Java-OOP-SnackGame/blob/main/src/snackGame/GamePanel.java)
+
+`Parent Class : `
+
+> Class `KeyAdapter.java`
+
+```java
+public abstract class KeyAdapter implements KeyListener {
+    
+    public void keyPressed(KeyEvent e) {
+    ...
+    }
+    
+}
+```
+
+`Parent Class : `
+
+> Class Interface `ActionListener.java`
+
+```java
+public interface ActionListener extends EventListener {
+
+    public void actionPerformed(ActionEvent e);
+
+}
+```
+
+`SubClass :`
+
+```java
+ //inner class (inheritance)
+    public class MyKeyAdapter extends KeyAdapter{
+        //Overriding method KeyPressed
+        @Override                                                                   
+        public void keyPressed(KeyEvent e) {
+        ...
+        }    
+    }
+     
+    //Overriding pada method actionPerformed yaitu untuk memulai berjalannya game
+    @Override
+    public void actionPerformed(ActionEvent e) {                                   
+       ...
+    }
+```
+
+</br>  
 
 #### 📘 Modul 9 : Exception
 
