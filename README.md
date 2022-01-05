@@ -197,7 +197,7 @@ public class GamePanel extends JPanel implements ActionListener {
 
 4. Object ☑️
 
-Objek (Object) adalah sebuah variabel instance yang merupakan wujud dari class. Instance merupakan wujud dari sebuah kelas. Sebuah objek digambarkan dengan variable dan method.
+`Objek` (Object) adalah sebuah variabel instance yang merupakan wujud dari class. `Instance` merupakan wujud dari sebuah kelas. Sebuah objek digambarkan dengan `variable` dan `method`.
 Penerapan Object pada program `SnackGame` yaitu:
 
 > Class "GameFrame" [(Link here)](https://github.com/womenincode/Java-OOP-SnackGame/blob/main/src/snackGame/GameFrame.java)
@@ -222,7 +222,7 @@ public class GameFrame extends JFrame {
 
 1. Information Hiding ☑️
 
-Information Hiding adalah menyembunyikan attribute suatu objek dari objek lain. Informasi dari 'class' disembunyikan dari anggota-anggota lainnya agar 'class' lain tidak dapat mengaksesnya. Implementasi pada program `SnackGame` yaitu:
+`Information Hiding` adalah menyembunyikan attribute suatu objek dari objek lain. Informasi dari `class` disembunyikan dari anggota-anggota lainnya agar 'class' lain tidak dapat mengaksesnya. Implementasi pada program `SnackGame` yaitu:
 
 > Class "GamePanel" [(Link here)](https://github.com/womenincode/Java-OOP-SnackGame/blob/main/src/snackGame/GamePanel.java)
 
@@ -237,7 +237,7 @@ Information Hiding adalah menyembunyikan attribute suatu objek dari objek lain. 
 
 2. Encapsulation (Enkapsulasi) ☑️
 
-Encapsulation (Enkapsulasi) adalah suatu cara untuk menyembunyikan implementasi detail dari suatu class. Enkapsulasi mempunyai dua hal mendasar, yaitu:
+`Encapsulation` (Enkapsulasi) adalah suatu cara untuk menyembunyikan implementasi detail dari suatu class. Enkapsulasi mempunyai dua hal mendasar, yaitu:
 
 > Class "GamePanel" [(Link here)](https://github.com/womenincode/Java-OOP-SnackGame/blob/main/src/snackGame/GamePanel.java)
 
@@ -349,7 +349,7 @@ public class GamePanel extends JPanel implements ActionListener {
 
 1. Inheritance ☑️
 
-Inheritance merupakan salah satu dari 4 konsep Pemrograman Java yang fundamental Java. Inheritance bersifat krusial karena memiliki efek langsung pada bagaimana mendesain class-class. Konsep ini sebenarnya memiliki tujuan yaitu ketika membuat suatu class maka hanya perlu menspesifikasikan apa yang menjadi perbedaan antara suatu class dengan class lainnya, kemudian secara otomatis Inheritance ini akan memberikan akses otomatis terhadap informasi yang terkandung dari class lainnya. Keyword untuk Inheritance atau pewarisan adalah "Extends". Berikut penerapan pada program `SnackGame` yaitu:
+`Inheritance` merupakan salah satu dari 4 konsep Pemrograman Java yang fundamental Java. Inheritance bersifat krusial karena memiliki efek langsung pada bagaimana mendesain class-class. Konsep ini sebenarnya memiliki tujuan yaitu ketika membuat suatu class maka hanya perlu menspesifikasikan apa yang menjadi perbedaan antara suatu class dengan class lainnya, kemudian secara otomatis Inheritance ini akan memberikan akses otomatis terhadap informasi yang terkandung dari class lainnya. Keyword untuk Inheritance atau pewarisan adalah "Extends". Berikut penerapan pada program `SnackGame` yaitu:
 
 > Class "GamePanel" [(Link here)](https://github.com/womenincode/Java-OOP-SnackGame/blob/main/src/snackGame/GamePanel.java)
 
@@ -373,7 +373,7 @@ public class GamePanel extends JPanel implements ActionListener {
  
 2. Kata kunci "Super" ☑️
 
-Kata kunci "Super" dipakai untuk merujuk pada member dari Parent Class, bagaimana kata kunci this yang dipakai untuk merujuk pada anggota dari class itu sendiri.  Berikut penerapan pada program `SnackGame` yaitu:
+Kata kunci `"Super"` dipakai untuk merujuk pada member dari Parent Class, bagaimana kata kunci this yang dipakai untuk merujuk pada anggota dari class itu sendiri.  Berikut penerapan pada program `SnackGame` yaitu:
 
 > Class "GamePanel" [(Link here)](https://github.com/womenincode/Java-OOP-SnackGame/blob/main/src/snackGame/GamePanel.java)
 
@@ -396,7 +396,7 @@ public class GamePanel extends JPanel implements ActionListener {
 
 1. Overriding ☑️
 
-Overriding merupakan suatu keadaan dimana kelas anak dapat mengubah atau bisa kita bilang memodifikasi atau memperluas data dan method pada kelas induk. Keuntungan Overriding : dapat menambahkan sifat / atribut pada kelas induk nya. Berikut penerapan pada program `SnackGame` yaitu:
+`Overriding` merupakan suatu keadaan dimana kelas anak dapat mengubah atau bisa kita bilang memodifikasi atau memperluas data dan method pada kelas induk. Keuntungan Overriding : dapat menambahkan sifat / atribut pada kelas induk nya. Berikut penerapan pada program `SnackGame` yaitu:
 
 > Class "GamePanel" [(Link here)](https://github.com/womenincode/Java-OOP-SnackGame/blob/main/src/snackGame/GamePanel.java)
 
