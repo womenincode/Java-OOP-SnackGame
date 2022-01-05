@@ -794,15 +794,3 @@ public class GamePanel extends JPanel implements ActionListener {               
 ## Kesimpulan
 
 Kesimpulan dari pembuatan program `SnackGame` menggunakan bahasa pemrograman Java berbasis OOP (Object Oriented Programming) bahwa dengan menerapkan materi Pemrograman Berorientasi Objek dapat mempermudah dalam penulisan kode program. Konsep OOP adalah paradigma pemrograman yang berorientasikan kepada objek yang merupakan suatu metode dalam pembuatan program, dengan tujuan untuk menyelesaikan kompleksnya berbagai masalah program yang terus meningkat. Konsep `Information Hiding`, `Enkapsulasi`, `Constructor`, `Overriding constructor`, `kata kunci This`, `Inheritance`, `Polimorfisme`, dan `Exception` sangat bermanfaat di terapkan pada kode yang berorientasi Objek, menggunakan konsep-konsep tersebut membuat kode terlebih terstruktur dan mudah untuk dikembangkan.
-
-
-
-
-
-
-
-
-
-
-
-
